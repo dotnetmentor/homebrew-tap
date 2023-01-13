@@ -5,13 +5,13 @@
 class Cidrgrep < Formula
   desc "like grep but for IP/CIDR matching"
   homepage "https://github.com/dotnetmentor/cidrgrep"
-  version "0.1.0"
+  version "0.1.1"
   license "Apache License 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.0/cidrgrep_v0.1.0_darwin_arm64.zip"
-      sha256 "80f5fff794366b9bb348cf639f7dec1c9230aa44283e977b62a6f3d5884a027d"
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.1/cidrgrep_v0.1.1_darwin_arm64.zip"
+      sha256 "0423da7b4ef29f4997f485fe2acda0043e40f046aefa9c22ce4545552e4624ec"
 
       def install
         bin.install 'cidrgrep'
@@ -22,8 +22,8 @@ class Cidrgrep < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.0/cidrgrep_v0.1.0_darwin_amd64.zip"
-      sha256 "00ea240d0d7333eee41156f789a7d1e4562f94845739447c83d55dbc3301dc73"
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.1/cidrgrep_v0.1.1_darwin_amd64.zip"
+      sha256 "6e135078ff3893922dca002984f9a25f43ecebcdf3556fa754ad4091a93f569c"
 
       def install
         bin.install 'cidrgrep'
@@ -37,8 +37,8 @@ class Cidrgrep < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.0/cidrgrep_v0.1.0_linux_amd64.tar.gz"
-      sha256 "37d38ac0061392df0f726c44bcf7ccee352c743bf3aa861fe799747995df8226"
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.1/cidrgrep_v0.1.1_linux_amd64.tar.gz"
+      sha256 "73787f86759ee9b6aa48a8892a3f8e4f3e7fa16dc9ad9a7b1132800a9aa0f9ed"
 
       def install
         bin.install 'cidrgrep'
