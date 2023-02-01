@@ -5,13 +5,13 @@
 class Cidrgrep < Formula
   desc "like grep but for IP/CIDR matching"
   homepage "https://github.com/dotnetmentor/cidrgrep"
-  version "0.1.1"
+  version "0.2.0"
   license "Apache License 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.1/cidrgrep_v0.1.1_darwin_arm64.zip"
-      sha256 "0423da7b4ef29f4997f485fe2acda0043e40f046aefa9c22ce4545552e4624ec"
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.2.0/cidrgrep_v0.2.0_darwin_arm64.zip"
+      sha256 "4a383e137d60bd6b4d0f23cc2685608c39e2ab7cdcfc3cd5ba379bb76528c76a"
 
       def install
         bin.install 'cidrgrep'
@@ -22,8 +22,8 @@ class Cidrgrep < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.1/cidrgrep_v0.1.1_darwin_amd64.zip"
-      sha256 "6e135078ff3893922dca002984f9a25f43ecebcdf3556fa754ad4091a93f569c"
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.2.0/cidrgrep_v0.2.0_darwin_amd64.zip"
+      sha256 "8af32d5d204c1007ea8e04fc4e82c379e976f51bc21674ed125a447585c9a9e5"
 
       def install
         bin.install 'cidrgrep'
@@ -36,9 +36,21 @@ class Cidrgrep < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.2.0/cidrgrep_v0.2.0_linux_arm64.tar.gz"
+      sha256 "2191245dae50e826de7ec649a115c0e9ef83fed560757396ad42253db7ddf98f"
+
+      def install
+        bin.install 'cidrgrep'
+        output = Utils.safe_popen_read("#{bin}/cidrgrep", 'completion', 'bash')
+        (bash_completion/'cidrgrep').write output
+        output = Utils.safe_popen_read("#{bin}/cidrgrep", 'completion', 'zsh')
+        (zsh_completion/'_cidrgrep').write output
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.1.1/cidrgrep_v0.1.1_linux_amd64.tar.gz"
-      sha256 "73787f86759ee9b6aa48a8892a3f8e4f3e7fa16dc9ad9a7b1132800a9aa0f9ed"
+      url "https://github.com/dotnetmentor/cidrgrep/releases/download/v0.2.0/cidrgrep_v0.2.0_linux_amd64.tar.gz"
+      sha256 "9aed84d78dcca1e4e74438aca7c48a8d50ce38300059e5aa820924c82af675ce"
 
       def install
         bin.install 'cidrgrep'
