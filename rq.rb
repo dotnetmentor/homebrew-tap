@@ -5,13 +5,13 @@
 class Rq < Formula
   desc "Resource Query cli"
   homepage "https://github.com/dotnetmentor/rq"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache License 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dotnetmentor/rq/releases/download/v0.1.0/rq_v0.1.0_darwin_arm64.zip"
-      sha256 "e9df319fee0f9f1f205726e9979021f4747f80fc0a71d25f115d79e594029264"
+      url "https://github.com/dotnetmentor/rq/releases/download/v0.2.0/rq_v0.2.0_darwin_arm64.zip"
+      sha256 "47d053928aa43307a8b0d9a49318c7d01f0d67d8afcb62d90ddfb5e4b0daaa1c"
 
       def install
         bin.install 'rq'
@@ -22,8 +22,8 @@ class Rq < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotnetmentor/rq/releases/download/v0.1.0/rq_v0.1.0_darwin_amd64.zip"
-      sha256 "04fe603f0ee09ea97251a77c154959c9d1cbba567fc63616a54e41061165387f"
+      url "https://github.com/dotnetmentor/rq/releases/download/v0.2.0/rq_v0.2.0_darwin_amd64.zip"
+      sha256 "7f90118227b0d27296bb48c167616247a2cf54b0892b96e31738990254a46d66"
 
       def install
         bin.install 'rq'
@@ -37,8 +37,8 @@ class Rq < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotnetmentor/rq/releases/download/v0.1.0/rq_v0.1.0_linux_arm64.tar.gz"
-      sha256 "88d801718a7cdb68de3f693a9add5c100e0c83519dacb8e6978f602e1f3bac61"
+      url "https://github.com/dotnetmentor/rq/releases/download/v0.2.0/rq_v0.2.0_linux_arm64.tar.gz"
+      sha256 "b17a6493d915ba2aee1327a0dea17ac179a141d46d98d6be161a291fe6208a74"
 
       def install
         bin.install 'rq'
@@ -49,8 +49,8 @@ class Rq < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotnetmentor/rq/releases/download/v0.1.0/rq_v0.1.0_linux_amd64.tar.gz"
-      sha256 "f5841a325e27697dbae28e4540987445c6d9223ef6bfe79afc2363fa11f21ac9"
+      url "https://github.com/dotnetmentor/rq/releases/download/v0.2.0/rq_v0.2.0_linux_amd64.tar.gz"
+      sha256 "9ad433b3accdf209e7fdcb8d39d7da730916a954b0b62bbe9a2e39cc49ab9540"
 
       def install
         bin.install 'rq'
